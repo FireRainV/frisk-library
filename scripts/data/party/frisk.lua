@@ -115,6 +115,23 @@ function character:init()
     self.force_gameover_message = true
 end
 
+function character:getName()
+    if Kristal.getLibConfig("frisk-lib", "use_player_name") then
+        return Game.save_name
+    else
+        return super.getName(self)
+    end
+end
+
+function character:getNameSprite()
+    if Kristal.getLibConfig("frisk-lib", "use_player_name") then
+        return nil
+    else
+        return super.getNameSprite(self)
+    end
+end
+
+
 function character:getHeadIcons()
     if Game:isLight() then
         return "party/frisk/light/icon"
