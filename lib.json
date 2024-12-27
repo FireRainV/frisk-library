@@ -1,0 +1,9 @@
+{
+    "id": "frisk-lib",
+    "authors": [
+        "SadDiamondMan", // Main dev
+        "FireRainV" // Helper
+    ],
+    "version": "v1.0.1",
+    "engineVer": "v0.10.0-dev",
+}
