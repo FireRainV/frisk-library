@@ -10,6 +10,8 @@ function item:init()
     self.type = "weapon"
     -- Whether this item is for the light world
     self.light = true
+    
+    self.description = "Its bark is worse than its bite."
 
     -- Light world check text
     self.check = "Weapon 1 AT\n* Its bark is worse than its bite."

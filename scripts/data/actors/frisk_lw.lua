@@ -113,4 +113,12 @@ function actor:init()
     }
 end
 
+function actor:getVoice()
+    if Game.state == "GAMEOVER" then
+        return "asgore"
+    else
+        return super.getVoice(self)
+    end
+end
+
 return actor

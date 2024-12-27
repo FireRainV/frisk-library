@@ -142,6 +142,7 @@ function character:init()
 
     -- Message shown on gameover (optional)
     self.gameover_message = nil
+    self.force_gameover_message = true
 end
 
 function character:getHeadIcons()
@@ -150,6 +151,11 @@ function character:getHeadIcons()
     else
         return super.getHeadIcons(self)
     end
+end
+
+function character:getGameOverMessage(main)
+    local determined = main:getName().."![wait:10]\nStay determined..."
+    return Utils.pick({{"You cannot give\nup just yet...", determined}, {"You're going to\nbe alright!", determined}, {"It cannot end\nnow!", determined}, {"Don't lose hope!", determined}, {"Our fate rests\nupon you...", determined}})
 end
 
 function character:onLevelUp(level)
