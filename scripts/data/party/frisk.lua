@@ -121,6 +121,8 @@ function character:init()
     
     -- Head icon in the equip / power menu
     self.menu_icon = "party/frisk/head"
+    -- Path to head icons used in battle
+    self.head_icons = "party/frisk/dark/icon"
     -- Name sprite
     self.name_sprite = "party/frisk/name"
 
@@ -146,7 +148,7 @@ function character:getHeadIcons()
     if Game:isLight() then
         return "party/frisk/light/icon"
     else
-        return "party/frisk/dark/icon"
+        return super.getHeadIcons(self)
     end
 end
 
