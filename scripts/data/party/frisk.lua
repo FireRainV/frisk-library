@@ -11,13 +11,9 @@ function character:init()
     self:setLightActor("frisk_lw")
 
     -- Display level (saved to the save file)
-    self.level = Game.chapter
+    self.level = 1
     -- Default title / class (saved to the save file)
-    if Game.chapter == 1 then
-        self.title = "Fallen Human\nArrived from a\ndiffrent world."
-    else
-        self.title = "Fallen Human\nArrived from a\ndiffrent world."
-    end
+    self.title = "Fallen Human\nArrived from a\ndiffrent world."
 
     -- Determines which character the soul comes from (higher number = higher priority)
     self.soul_priority = 2
@@ -37,48 +33,22 @@ function character:init()
     self.xact_name = "F-Action"
 
     -- Current health (saved to the save file)
-    if Game.chapter == 1 then
-        self.health = 90
-    else
-        self.health = 90
-    end
+    self.health = 90
 
     -- Base stats (saved to the save file)
-    if Game.chapter == 1 then
-        self.stats = {
-            health = 90,
-            attack = 10,
-            defense = 2,
-            magic = 0
-        }
-    else
-        self.stats = {
-            health = 90,
-            attack = 10,
-            defense = 2,
-            magic = 0
-        }
-    end
+    self.stats = {
+        health = 90,
+        attack = 10,
+        defense = 2,
+        magic = 0
+    }
     -- Max stats from level-ups
-    if Game.chapter == 1 then
-        self.max_stats = {
-            health = 120
-        }
-    else
-        self.max_stats = {
-            health = 120
-        }
-    end
+    self.max_stats = {
+        health = 120
+    }
 
     -- Weapon icon in equip menu
     self.weapon_icon = "ui/menu/equip/rapier"
-
-    -- Equipment (saved to the save file)
-    if Game.chapter >= 2 then
-   --     self:setArmor(1, "amber_card")
-    --    self:setArmor(2, "amber_card")
-    end
-
 
     self:setWeapon("wood_rapier")
 
