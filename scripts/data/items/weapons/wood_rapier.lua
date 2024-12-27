@@ -16,7 +16,7 @@ function item:init()
     -- Shop description
     self.shop = ""
     -- Menu description
-    self.description = "A wooden practice rapier with a bark-\neinforced shell."
+    self.description = "A wooden practice rapier with a bark-\nreinforced shell."
 
     -- Default shop price (sell price is halved)
     self.price = 60
