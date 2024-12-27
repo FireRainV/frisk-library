@@ -1,6 +1,5 @@
 local lib = {}
 function lib:init()
-    print("Loaded Frisk")
 end
 
 function lib:onRegisterItems()
