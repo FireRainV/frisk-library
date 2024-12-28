@@ -104,13 +104,13 @@ function character:init()
     self.attack_pitch = 1
 
     -- Battle position offset (optional)
-    self.battle_offset = {-2, -11}
+    self.battle_offset = {-2, -1}
     -- Head icon position offset (optional)
     self.head_icon_offset = nil
     -- Menu icon position offset (optional)
     self.menu_icon_offset = nil
     -- Battle soul position offset (optional)
-    self.soul_offset = {9, 10}
+    self.soul_offset = {9, 2}
 
     -- Message shown on gameover (optional)
     self.gameover_message = nil
@@ -147,17 +147,9 @@ function character:getGameOverMessage(main)
     return Utils.pick({{"You cannot give\nup just yet...", determined}, {"You're going to\nbe alright!", determined}, {"It cannot end\nnow!", determined}, {"Don't lose hope!", determined}, {"Our fate rests\nupon you...", determined}})
 end
 
-function character:getBattleOffset()
-    if Game:isLight() then
-        return -2, 3
-    else
-        return super.getBattleOffset(self)
-    end
-end
-
 function character:getSoulOffset()
     if Game:isLight() then
-        return 2, 0
+        return 0, 0
     else
         return super.getSoulOffset(self)
     end
