@@ -8,17 +8,17 @@ function actor:init()
 
     -- Width and height for this actor, used to determine its center
     self.width = 20
-    self.height = 37
+    self.height = 30
 
     -- Hitbox for this actor in the overworld (optional, uses width and height by default)
-    self.hitbox = {0, 26.5, 20, 12}
+    self.hitbox = {1, 17.5, 17, 12}
 
     -- Color for this actor used in outline areas (optional, defaults to red)
     self.color = {0, 1, 0}
     
     -- A table that defines where the Soul should be placed on this actor if they are a player.
     -- First value is x, second value is y.
-    self.soul_offset = {9, 28}
+    self.soul_offset = {9.5, 21}
 
     -- Path to this actor's sprites (defaults to "")
     self.path = "party/frisk/dark"
@@ -71,36 +71,44 @@ function actor:init()
         ["walk/left"] = "walk/left",
         ["walk/right"] = "walk/right",
     }
+    
+    local x, y = 0, -10
 
     -- Table of sprite offsets (indexed by sprite name)
     self.offsets = {
         -- Movement offsets
-        ["walk/left"] = {1.5, 0},
-        ["walk/right"] = {-2.5, 0},
-        ["walk/up"] = {-1.5, 0},
-        ["walk/down"] = {0, 0},
+        ["walk/left"] = {1.5, 1},
+        ["walk/right"] = {-2.5, 1},
+        ["walk/up"] = {-1, 1},
+        ["walk/down"] = {0, 1},
 
         ["walk_blush/down"] = {0, 0},
 
         ["slide"] = {0, 0},
 
         -- Battle offsets
-        ["battle/idle"] = {0, 0},
+        ["battle/idle"] = {x, y},
+        ["battle/attack_ready"] = {x, y},
+        ["battle/hit"] = {x, y},
+        ["battle/down"] = {x, y},
+        ["battle/spare"] = {x, y},
 
-        ["battle/attack"] = {2, 0},
-        ["battle/attackready"] = {0, 0},
-        ["battle/act"] = {0, 0},
-        ["battle/actend"] = {0, 0},
-        ["battle/actready"] = {0, 0},
-        ["battle/item"] = {0, 0},
-        ["battle/itemready"] = {0, 0},
-        ["battle/defend"] = {0, 0},
+        ["battle/idle"] = {x, y},
 
-        ["battle/defeat"] = {0, 0},
-        ["battle/hurt"] = {0, 0},
+        ["battle/attack"] = {x + 2, y},
+        ["battle/attackready"] = {x, y},
+        ["battle/act"] = {x, y},
+        ["battle/actend"] = {x, y},
+        ["battle/actready"] = {x, y},
+        ["battle/item"] = {x, y},
+        ["battle/itemready"] = {x, y},
+        ["battle/defend"] = {x, y},
 
-        ["battle/intro"] = {0, 0},
-        ["battle/victory"] = {0, 0},
+        ["battle/defeat"] = {x, y},
+        ["battle/hurt"] = {x, y},
+
+        ["battle/intro"] = {x, y},
+        ["battle/victory"] = {x, y},
 
         -- Cutscene offsets
         ["ball"] = {0, 0},

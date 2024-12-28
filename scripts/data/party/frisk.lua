@@ -110,7 +110,7 @@ function character:init()
     -- Menu icon position offset (optional)
     self.menu_icon_offset = nil
     -- Battle soul position offset (optional)
-    self.soul_offset = {9, 10}
+    self.soul_offset = {9, 2}
 
     -- Message shown on gameover (optional)
     self.gameover_message = nil
