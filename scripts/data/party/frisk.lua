@@ -149,7 +149,7 @@ end
 
 function character:getSoulOffset()
     if Game:isLight() then
-        return 0, 0
+        return 2, 5
     else
         return super.getSoulOffset(self)
     end
