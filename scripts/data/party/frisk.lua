@@ -13,12 +13,12 @@ function character:init()
     -- Display level (saved to the save file)
     self.level = 1
     -- Default title / class (saved to the save file)
-    self.title = "Fallen Human\nArrived from a\ndiffrent world."
+    self.title = "Fallen Human\nArrived from a\ndifferent world."
 
     -- Determines which character the soul comes from (higher number = higher priority)
     self.soul_priority = 2
     -- The color of this character's soul (optional, defaults to red)
-    --self.soul_color = {1, 0, 0}
+    self.soul_color = {1, 0, 0}
 
     -- Whether the party member can act / use spells
     self.has_act = true
@@ -109,6 +109,8 @@ function character:init()
     self.head_icon_offset = nil
     -- Menu icon position offset (optional)
     self.menu_icon_offset = nil
+    -- Battle soul position offset (optional)
+    self.soul_offset = {9, 10}
 
     -- Message shown on gameover (optional)
     self.gameover_message = nil
@@ -145,6 +147,14 @@ function character:getGameOverMessage(main)
     return Utils.pick({{"You cannot give\nup just yet...", determined}, {"You're going to\nbe alright!", determined}, {"It cannot end\nnow!", determined}, {"Don't lose hope!", determined}, {"Our fate rests\nupon you...", determined}})
 end
 
+function character:getSoulOffset()
+    if Game:isLight() then
+        return 0, 0
+    else
+        return super.getSoulOffset(self)
+    end
+end
+
 function character:onLevelUp(level)
     self:increaseStat("health", 2)
     if level % 10 == 0 then
@@ -152,34 +162,16 @@ function character:onLevelUp(level)
     end
 end
 
-function character:onPowerSelect(menu)
-    if Utils.random() < ((Game.chapter == 1) and 0.02 or 0.04) then
-        menu.kris_dog = true
-    else
-        menu.kris_dog = false
-    end
-end
-
 function character:drawPowerStat(index, x, y, menu)
-    if index == 1 and menu.kris_dog then
-        local frames = Assets.getFrames("misc/dog_sleep")
-        local frame = math.floor(Kristal.getTime()) % #frames + 1
-        love.graphics.print("Dog:", x, y)
-        love.graphics.draw(frames[frame], x+120, y+5, 0, 2, 2)
-        return true
-    elseif index == 3 then
+    if index == 3 then
         local icon = Assets.getTexture("ui/menu/icon/fire")
         love.graphics.draw(icon, x-26, y+6, 0, 2, 2)
         love.graphics.print("Guts:", x, y)
 
         love.graphics.draw(icon, x+90, y+6, 0, 2, 2)
-        if Game.chapter >= 2 then
-            love.graphics.draw(icon, x+110, y+6, 0, 2, 2)
-        end
+        love.graphics.draw(icon, x+110, y+6, 0, 2, 2)
         return true
     end
 end
-
-
 
 return character

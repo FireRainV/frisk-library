@@ -62,7 +62,6 @@ function actor:init()
         ["battle/victory"]      = {"battle/victory", 1/10, false},
 
         -- Cutscene animations
-        ["jump_fall"]           = {"fall", 1/5, true},
         ["jump_ball"]           = {"ball", 1/15, true},
     }
     -- Tables of sprites to change into in mirrors
@@ -104,29 +103,7 @@ function actor:init()
         ["battle/victory"] = {0, 0},
 
         -- Cutscene offsets
-        ["pose"] = {-4, -2},
-
-        ["fall"] = {-5, -6},
         ["ball"] = {0, 0},
-        ["landed"] = {-4, -2},
-
-        ["fell"] = {-14, 1},
-
-        ["sword_jump_down"] = {-19, -5},
-        ["sword_jump_settle"] = {-27, 4},
-        ["sword_jump_up"] = {-17, 2},
-
-        ["hug_left"] = {-4, -1},
-        ["hug_right"] = {-2, -1},
-
-        ["peace"] = {0, 0},
-        ["rude_gesture"] = {0, 0},
-
-        ["reach"] = {-3, -1},
-
-        ["sit"] = {-3, 0},
-
-        ["t_pose"] = {-4, 0},
     }
 end
 

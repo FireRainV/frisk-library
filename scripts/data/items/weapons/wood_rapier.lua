@@ -16,7 +16,7 @@ function item:init()
     -- Shop description
     self.shop = ""
     -- Menu description
-    self.description = "A wooden practice rapier with a bark-\nreinforced shell."
+    self.description = "A wooden practice rapier with a\nbark-reinforced shell."
 
     -- Default shop price (sell price is halved)
     self.price = 60
@@ -51,10 +51,6 @@ function item:init()
         ralsei = "That's yours, Frisk...",
         noelle = "(wow...)",
     }
-end
-
-function item:convertToLightEquip(chara)
-    return "ut_weapons/stick"
 end
 
 return item

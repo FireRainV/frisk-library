@@ -62,8 +62,6 @@ function actor:init()
         ["battle/victory"]      = {"walk/right_1", 1/10, false},
 
         -- Cutscene animations
-        ["jump_fall"]           = {"fall", 1/5, true},
-        ["jump_ball"]           = {"ball", 1/15, true},
     }
 
     -- Tables of sprites to change into in mirrors
@@ -82,10 +80,6 @@ function actor:init()
         ["walk/right"] = {-2.5, 0},
         ["walk/up"] = {-1.5, 0},
         ["walk/down"] = {0, 0},
-
-        ["walk_blush/down"] = {0, 0},
-
-        ["slide"] = {0, 0},
 
         -- Battle offsets
         ["battle/idle"] = {x, y},

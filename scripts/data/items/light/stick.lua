@@ -15,7 +15,6 @@ function item:init()
 
     -- Light world check text
     self.check = "Weapon 1 AT\n* Its bark is worse than its bite."
-                                 --Its bark is worse than its bite.
 
     -- Where this item can be used (world, battle, all, or none)
     self.usable_in = "all"
@@ -27,9 +26,6 @@ function item:init()
         attack = 1,
         defense = 0
     }
-
-    -- Default dark item conversion for this item
-    self.dark_item = "wood_rapier"
 end
 
 return item
