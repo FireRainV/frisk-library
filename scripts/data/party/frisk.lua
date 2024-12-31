@@ -54,8 +54,8 @@ function character:init()
 
     -- Default light world equipment item IDs (saves current equipment)
     if MagicalGlassLib then
-        self.lw_weapon_default = "ut_weapons/stick"
-        self.lw_armor_default = "ut_armors/bandage"
+        self.lw_weapon_default = "undertale/stick"
+        self.lw_armor_default = "undertale/bandage"
     else
         self.lw_weapon_default = "light/stick"
         self.lw_armor_default = "light/bandage"
