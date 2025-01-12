@@ -18,7 +18,7 @@ function actor:init()
     
     -- A table that defines where the Soul should be placed on this actor if they are a player.
     -- First value is x, second value is y.
-    self.soul_offset = {9.5, 21}
+    self.soul_offset = {10, 21.5}
 
     -- Path to this actor's sprites (defaults to "")
     self.path = "party/frisk/light"
@@ -41,18 +41,18 @@ function actor:init()
         ["battle/idle"]         = {"battle/idle", 0.2, true},
 
         ["battle/attack"]       = {"battle/attack", 1/15, false},
-        ["battle/act"]          = {"battle/spare", 1/15, false},
-        ["battle/spell"]        = {"battle/spare", 1/15, false},
+        ["battle/act"]          = {"battle/act", 1/15, false},
+        ["battle/spell"]        = {"battle/act", 1/15, false},
         ["battle/item"]         = {"battle/item", 1/12, false, next="battle/idle"},
         ["battle/spare"]        = {"battle/spare", 1/15, false, next="battle/idle"},
 
         ["battle/attack_ready"] = {"battle/attack_ready", 1/30, false},
-        ["battle/act_ready"]    = {"battle/spare_02", 0.2, true},
-        ["battle/spell_ready"]  = {"battle/spare_02", 0.2, true},
-        ["battle/item_ready"]   = {"battle/item_02", 0.2, false},
+        ["battle/act_ready"]    = {"battle/actready", 0.2, true},
+        ["battle/spell_ready"]  = {"battle/actready", 0.2, true},
+        ["battle/item_ready"]   = {"battle/itemready", 0.2, true},
         ["battle/defend_ready"] = {"battle/defend", 1/15, false},
 
-        ["battle/act_end"]      = {"battle/spare_02", 1/15, false, next="battle/idle"},
+        ["battle/act_end"]      = {"battle/act_01", 1/15, false, next="battle/idle"},
 
         ["battle/hurt"]         = {"battle/hit", 1/15, false, temp=true, duration=0.5},
         ["battle/defeat"]       = {"battle/down", 1/15, false},
