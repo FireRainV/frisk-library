@@ -76,8 +76,8 @@ function actor:init()
 
     self.offsets = {
         -- Movement offsets
-        ["walk/left"] = {2, 1},
-        ["walk/right"] = {-2, 1},
+        ["walk/left"] = {2.5, 1},
+        ["walk/right"] = {-2.5, 1},
         ["walk/up"] = {-0.5, 1},
         ["walk/down"] = {0.5, 1},
 
